@@ -40,14 +40,15 @@ export class AppComponent implements AfterContentInit {
     this.sender = Office.context.mailbox.item.sender.emailAddress;
     // this.receiver = "avijitmondal38@gmail.com";
     this.subject = Office.context.mailbox.item.subject;
-    // this.body = this.getBody();
-
+    console.log(Office.context.mailbox.item.attachments);
+    // this.getBody();
     console.log("sender " + this.sender);
     console.log("subject " + this.subject);
+    console.log("body " + this.body);
   }
 
-  getBody(){
-    return new Promise((resolve, reject) => {
+  async getBody(){
+    this.body = await new Promise((resolve, reject) => {
       var item = Office.context.mailbox.item;
       var options = {asyncContext: {currentItem: item}};
   
@@ -59,10 +60,11 @@ export class AppComponent implements AfterContentInit {
               console.error("Error retrieving email body " + result.error.message);
               reject("Error retrieving email body");
         } else {
-          resolve(result.value.length)
+          resolve(result.value)
         }
       });
   })
+  
   }
 
   submitAsSpamVirusPhish(event): any {
