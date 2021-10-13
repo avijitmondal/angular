@@ -1,5 +1,5 @@
 export const environment = {
-  apiProxy: 'https://ec2-3-87-65-113.compute-1.amazonaws.com',
-  apiRest: 'https://ec2-3-87-65-113.compute-1.amazonaws.com',
+  apiProxy: 'https://3.87.65.113',
+  apiRest: 'https://3.87.65.113',
   production: true
 };
