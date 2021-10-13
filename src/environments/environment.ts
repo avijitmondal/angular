@@ -1,5 +1,5 @@
 export const environment = {
-  apiProxy: 'https://localhost:9090',
-  apiRest: 'https://localhost:9090',
+  apiProxy: 'https://3.87.65.113',
+  apiRest: 'https://3.87.65.113',
   production: false
 };
