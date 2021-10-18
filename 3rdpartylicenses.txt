@@ -36,12 +36,6 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-@improbable-eng/grpc-web
-Apache-2.0
-
-google-protobuf
-BSD-3-Clause
-
 rxjs
 Apache-2.0
                                Apache License
