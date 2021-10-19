@@ -25,6 +25,7 @@ export class AppComponent implements AfterContentInit {
 
   mail: any;
   data = {};
+  log = "";
 
   httpClient: HttpClient;
 
@@ -103,8 +104,7 @@ export class AppComponent implements AfterContentInit {
           function callback(result){
             if (result.status !== Office.AsyncResultStatus.Succeeded) {
               console.error("Error retrieving email attachment " + result.error.message);
-              return "failed to retrieve attachment";
-              reject("Error retrieving email attachment");
+              resolve("Error retrieving email attachment");
             } else {
               let email_attachment_obj = new Attachment();
               email_attachment_obj.id = item?.attachments[i].id;
