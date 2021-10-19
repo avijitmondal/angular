@@ -53,6 +53,7 @@ export class AppComponent implements AfterContentInit {
     
     await this.getBody().then((value) => {
       this.data["body"] = value;
+      console.log(value);
       this.getAttachments();
       });
 
