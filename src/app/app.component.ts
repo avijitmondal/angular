@@ -25,7 +25,7 @@ export class AppComponent implements AfterContentInit {
 
   mail: any;
   data = {};
-  log = "";
+  isSupported = "";
 
   httpClient: HttpClient;
 
@@ -52,9 +52,14 @@ export class AppComponent implements AfterContentInit {
     // this.sender = this.mail.sender.emailAddress;
     // this.subject = this.mail.subject;
     
+    if (Office.context.requirements.isSetSupported('Mailbox', '1.8')) {
+      this.isSupported = "Supports 1.8";
+    }
+    else {
+      this.isSupported = "Does not support 1.8";
+    }
     await this.getBody().then((value) => {
       this.data["body"] = value;
-      console.log(value);
       this.getAttachments();
       });
 
